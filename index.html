@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIPIN CSC CENTER | Cyber Cafe & Digital Services</title>
+
+<meta name="description" content="VIPIN CSC CENTER - AEPS, Aadhaar Pay, PAN Card, Online Forms, Bill Payment, Printing, Scanning and Digital Services.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --primary:#2563eb;
+    --secondary:#06b6d4;
+    --dark:#07152f;
+    --dark2:#0d2042;
+    --text:#172033;
+    --muted:#64748b;
+    --light:#f5f8ff;
+    --white:#ffffff;
+    --green:#16a34a;
+    --orange:#f97316;
+    --card:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--light);
+    color:var(--text);
+    transition:.3s;
+}
+
+body.dark{
+    --light:#07152f;
+    --card:#0d2042;
+    --text:#f8fafc;
+    --muted:#aab8ce;
+    --white:#0d2042;
+}
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
+}
+
+section{
+    padding:90px 0;
+}
+
+a{
+    text-decoration:none;
+}
+
+/* NAVBAR */
+
+.navbar{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:999;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+body.dark .navbar{
+    background:rgba(7,21,47,.92);
+}
+
+.nav{
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:46px;
+    height:46px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:23px;
+    font-weight:800;
+    box-shadow:0 10px 25px rgba(37,99,235,.3);
+}
+
+.logo-text strong{
+    display:block;
+    font-family:Poppins;
+    font-size:17px;
+}
+
+.logo-text small{
+    font-size:9px;
+    color:var(--muted);
+    letter-spacing:1.5px;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.nav-links a{
+    color:var(--text);
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-links a:hover{
+    color:var(--primary);
+}
+
+.dark-btn{
+    border:0;
+    background:#edf2ff;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    padding-top:100px;
+    display:flex;
+    align-items:center;
+    color:white;
+    background:
+    linear-gradient(120deg,rgba(3,15,39,.96),rgba(37,99,235,.82)),
+    url("https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=2000&q=85");
+    background-size:cover;
+    background-position:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:#06b6d4;
+    filter:blur(150px);
+    opacity:.25;
+    right:-150px;
+    top:100px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:60px;
+    align-items:center;
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 15px;
+    border-radius:50px;
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.1);
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:Poppins;
+    font-size:clamp(42px,6vw,70px);
+    line-height:1.08;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    background:linear-gradient(90deg,#67e8f9,#60a5fa);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    color:#dbeafe;
+    font-size:17px;
+    max-width:650px;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 22px;
+    border-radius:12px;
+    font-weight:700;
+    display:inline-block;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn-primary{
+    color:white;
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+    box-shadow:0 12px 30px rgba(37,99,235,.35);
+}
+
+.btn-white{
+    background:white;
+    color:#07152f;
+}
+
+/* HERO CARD */
+
+.hero-card{
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(18px);
+    padding:20px;
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:28px;
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-12px)}
+}
+
+.hero-card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+.hero-card-content{
+    padding:18px 5px 5px;
+}
+
+.hero-card h3{
+    font-family:Poppins;
+    margin-bottom:5px;
+}
+
+/* SECTION TITLE */
+
+.title{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 50px;
+}
+
+.title span{
+    color:var(--primary);
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+.title h2{
+    font-family:Poppins;
+    font-size:38px;
+    margin:8px 0;
+}
+
+.title p{
+    color:var(--muted);
+}
+
+/* SERVICES */
+
+.services{
+    background:var(--light);
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.service{
+    background:var(--card);
+    padding:25px;
+    border-radius:20px;
+    border:1px solid rgba(100,116,139,.12);
+    transition:.3s;
+    box-shadow:0 10px 30px rgba(20,40,80,.05);
+}
+
+.service:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(37,99,235,.12);
+}
+
+.icon{
+    width:58px;
+    height:58px;
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:27px;
+    background:#eaf1ff;
+    margin-bottom:18px;
+}
+
+.service h3{
+    font-family:Poppins;
+    font-size:18px;
+    margin-bottom:7px;
+}
+
+.service p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* AEPS */
+
+.aeps{
+    background:linear-gradient(135deg,#edf5ff,#f7fcff);
+}
+
+body.dark .aeps{
+    background:#0b1d3b;
+}
+
+.aeps-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.aeps-image{
+    position:relative;
+}
+
+.aeps-image img{
+    width:100%;
+    height:430px;
+    object-fit:cover;
+    border-radius:28px;
+    box-shadow:0 30px 60px rgba(37,99,235,.18);
+}
+
+.aeps-label{
+    position:absolute;
+    bottom:25px;
+    left:25px;
+    right:25px;
+    background:rgba(255,255,255,.94);
+    color:#07152f;
+    padding:18px;
+    border-radius:18px;
+    font-weight:700;
+}
+
+.aeps-content h2{
+    font-family:Poppins;
+    font-size:42px;
+    line-height:1.15;
+    margin:10px 0 18px;
+}
+
+.aeps-content p{
+    color:var(--muted);
+}
+
+.check-list{
+    margin:25px 0;
+}
+
+.check-item{
+    display:flex;
+    gap:12px;
+    margin:14px 0;
+}
+
+.check{
+    min-width:25px;
+    height:25px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#dcfce7;
+    color:#16a34a;
+    font-weight:bold;
+}
+
+/* FEATURE BANNERS */
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.feature-box{
+    min-height:280px;
+    border-radius:25px;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    color:white;
+    overflow:hidden;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+
+.feature-box:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent,rgba(0,0,0,.82));
+}
+
+.feature-box>*{
+    position:relative;
+    z-index:2;
+}
+
+.aadhaar{
+    background-image:url("https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=85");
+}
+
+.digital{
+    background-image:url("https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=85");
+}
+
+.feature-box h3{
+    font-family:Poppins;
+    font-size:26px;
+}
+
+/* PRICE */
+
+.prices{
+    background:var(--light);
+}
+
+.price-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.price-card{
+    background:var(--card);
+    padding:30px;
+    border-radius:24px;
+    border:1px solid rgba(100,116,139,.12);
+}
+
+.price-card.popular{
+    border:2px solid var(--primary);
+    transform:scale(1.03);
+    box-shadow:0 20px 50px rgba(37,99,235,.15);
+}
+
+.price-card h3{
+    font-family:Poppins;
+}
+
+.price{
+    font-size:38px;
+    font-weight:800;
+    color:var(--primary);
+    margin:15px 0;
+}
+
+.price-list{
+    list-style:none;
+    color:var(--muted);
+    line-height:2;
+}
+
+.price-list li:before{
+    content:"✓ ";
+    color:#16a34a;
+    font-weight:bold;
+}
+
+/* WHY */
+
+.why{
+    background:var(--dark);
+    color:white;
+}
+
+.why .title p{
+    color:#aebbd2;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.why-card{
+    padding:30px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:22px;
+}
+
+.why-card .big-icon{
+    font-size:35px;
+}
+
+.why-card h3{
+    font-family:Poppins;
+    margin:12px 0 8px;
+}
+
+.why-card p{
+    color:#aebbd2;
+    font-size:14px;
+}
+
+/* ENQUIRY */
+
+.enquiry{
+    background:var(--light);
+}
+
+.form-box{
+    max-width:850px;
+    margin:auto;
+    background:var(--card);
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 20px 50px rgba(20,40,80,.08);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.input-group{
+    margin-bottom:18px;
+}
+
+.input-group label{
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+    width:100%;
+    border:1px solid #dbe3f0;
+    padding:14px;
+    border-radius:12px;
+    outline:none;
+    background:var(--card);
+    color:var(--text);
+    font-family:inherit;
+}
+
+.input-group textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+/* CONTACT */
+
+.contact{
+    background:white;
+}
+
+body.dark .contact{
+    background:#07152f;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.contact-card{
+    padding:30px;
+    border-radius:25px;
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+    color:white;
+}
+
+.contact-card h2{
+    font-family:Poppins;
+    font-size:35px;
+    margin-bottom:12px;
+}
+
+.contact-details{
+    margin-top:25px;
+}
+
+.contact-detail{
+    padding:15px;
+    background:rgba(255,255,255,.12);
+    border-radius:13px;
+    margin:10px 0;
+}
+
+.map{
+    width:100%;
+    min-height:350px;
+    border:0;
+    border-radius:25px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#041127;
+    color:white;
+    padding:55px 0 20px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+}
+
+footer h3{
+    font-family:Poppins;
+    margin-bottom:15px;
+}
+
+footer p,
+footer li{
+    color:#aab8ce;
+    font-size:14px;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li{
+    margin:9px 0;
+}
+
+.copyright{
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.1);
+    margin-top:35px;
+    padding-top:20px;
+    color:#8292aa;
+    font-size:13px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    background:#25d366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    z-index:9999;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}
+    70%{box-shadow:0 0 0 15px rgba(37,211,102,0)}
+    100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
+}
+
+/* MOBILE */
+
+.mobile-menu{
+    display:none;
+}
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .mobile-menu{
+        display:block;
+        font-size:25px;
+        cursor:pointer;
+    }
+
+    .hero-grid,
+    .aeps-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .service-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .price-grid,
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .price-card.popular{
+        transform:none;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:65px 0;
+    }
+
+    .service-grid,
+    .feature-grid,
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:130px 0 80px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero-card img{
+        height:220px;
+    }
+
+    .title h2{
+        font-size:30px;
+    }
+
+    .aeps-content h2{
+        font-size:31px;
+    }
+
+    .form-box{
+        padding:22px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<div class="container nav">
+
+<a href="#home" class="logo">
+
+<div class="logo-icon">V</div>
+
+<div class="logo-text">
+<strong>VIPIN CSC CENTER</strong>
+<small>CYBER CAFE • DIGITAL SERVICES</small>
+</div>
+
+</a>
+
+<nav class="nav-links">
+
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#aeps">AEPS</a>
+<a href="#prices">Rates</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+
+<button class="dark-btn" onclick="darkMode()">🌙</button>
+
+</nav>
+
+<div class="mobile-menu">☰</div>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="badge">
+🇮🇳 Digital India • CSC • Cyber Cafe
+</div>
+
+<h1>
+Your Trusted
+<span>Digital Service</span>
+Center
+</h1>
+
+<p>
+VIPIN CSC CENTER par Aadhaar, AEPS, Aadhaar Pay,
+PAN Card, Online Forms, Bill Payment, Printing,
+Scanning aur digital services ek hi jagah.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#services" class="btn btn-primary">
+Explore Services →
+</a>
+
+<a href="#enquiry" class="btn btn-white">
+Online Enquiry
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-card">
+
+<img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1000&q=85">
+
+<div class="hero-card-content">
+
+<h3>Fast • Secure • Reliable</h3>
+
+<p>
+Aapke online aur digital kaam ke liye
+professional service center.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="title">
+
+<span>OUR SERVICES</span>
+
+<h2>All Digital Services Under One Roof</h2>
+
+<p>
+Aapke daily online aur digital kaam ke liye
+multiple services ek hi jagah.
+</p>
+
+</div>
+
+
+<div class="service-grid">
+
+
+<div class="service">
+<div class="icon">🪪</div>
+<h3>Aadhaar Services</h3>
+<p>Aadhaar related available services, documents and print assistance.</p>
+</div>
+
+
+<div class="service">
+<div class="icon">💳</div>
+<h3>AEPS</h3>
+<p>Aadhaar Enabled Payment System related authorized banking assistance.</p>
+</div>
+
+
+<div class="service">
+<div class="icon">💰</div>
+<h3>Aadhaar Pay</h3>
+<p>Aadhaar based payment service assistance.</p>
+</div>
+
+
+<div class="service">
+<div class="icon">🧾</div>
+<h3>PAN Card</h3>
+<p>PAN application, correction and online assistance.</p>
+</div>
+
+
+<div class="service">
+<div class="icon">📄</div>
+<h3>Online Forms</h3>
+<p>Government forms, exams, scholarships and recruitment applications.</p>
+</div>
+
+
+<div class="service">
+<div class="icon">💡</div>
+<h3>Bill Payment</h3>
+<p>Electricity, mobile recharge, DTH and utility payment assistance.</p>
+</div>
+
+
+<div class="service">
+<div class="icon">🖨️</div>
+<h3>Print & Scan</h3>
+<p>Colour print, B/W print, scanning and photocopy services.</p>
+</div>
+
+
+<div class="service">
+<div class="icon">🎫</div>
+<h3>Ticket Booking</h3>
+<p>Travel and ticket booking related online assistance.</p>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- AEPS -->
+
+<section class="aeps" id="aeps">
+
+<div class="container aeps-grid">
+
+<div class="aeps-image">
+
+<img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=85">
+
+<div class="aeps-label">
+💳 AEPS • Aadhaar Pay • Digital Banking
+</div>
+
+</div>
+
+
+<div class="aeps-content">
+
+<span style="color:#2563eb;font-weight:800;">
+AEPS & AADHAAR PAY
+</span>
+
+<h2>
+Banking & Digital Payment Made Easy
+</h2>
+
+<p>
+Authorized payment and banking services ke through
+customers ko convenient digital banking assistance.
+</p>
+
+
+<div class="check-list">
+
+<div class="check-item">
+<div class="check">✓</div>
+<div>
+<strong>AEPS Assistance</strong>
+<p>Aadhaar Enabled Payment System related assistance.</p>
+</div>
+</div>
+
+
+<div class="check-item">
+<div class="check">✓</div>
+<div>
+<strong>Aadhaar Pay</strong>
+<p>Aadhaar based payment service assistance.</p>
+</div>
+</div>
+
+
+<div class="check-item">
+<div class="check">✓</div>
+<div>
+<strong>Digital Payment</strong>
+<p>Digital payment related services and assistance.</p>
+</div>
+</div>
+
+</div>
+
+<a href="#enquiry" class="btn btn-primary">
+Enquire Now →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FEATURE -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="title">
+
+<span>DIGITAL INDIA</span>
+
+<h2>Smart Digital Services</h2>
+
+<p>
+Technology ko simple banakar aapke important
+online kaam ko easy banana hamara goal hai.
+</p>
+
+</div>
+
+
+<div class="feature-grid">
+
+<div class="feature-box aadhaar">
+
+<h3>Aadhaar & Documents</h3>
+
+<p>
+Documents, printing aur online application assistance.
+</p>
+
+</div>
+
+
+<div class="feature-box digital">
+
+<h3>Digital Payment</h3>
+
+<p>
+AEPS, Aadhaar Pay aur digital payment assistance.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRICES -->
+
+<section class="prices" id="prices">
+
+<div class="container">
+
+<div class="title">
+
+<span>SERVICE RATES</span>
+
+<h2>Popular Service Packages</h2>
+
+<p>
+Neeche sample rates hain. Aap apne actual rates ke according change kar sakte ho.
+</p>
+
+</div>
+
+
+<div class="price-grid">
+
+
+<div class="price-card">
+
+<h3>Basic Digital</h3>
+
+<div class="price">₹49+</div>
+
+<ul class="price-list">
+
+<li>Online Form Assistance</li>
+<li>Document Print</li>
+<li>Scan</li>
+<li>Basic Online Work</li>
+
+</ul>
+
+</div>
+
+
+<div class="price-card popular">
+
+<h3>Document Pack</h3>
+
+<div class="price">₹99+</div>
+
+<ul class="price-list">
+
+<li>Print & Scan</li>
+<li>Document Assistance</li>
+<li>Online Application</li>
+<li>PDF / Document Work</li>
+
+</ul>
+
+</div>
+
+
+<div class="price-card">
+
+<h3>Premium Assistance</h3>
+
+<div class="price">₹199+</div>
+
+<ul class="price-list">
+
+<li>Online Application</li>
+<li>Document Assistance</li>
+<li>Form Filling</li>
+<li>Complete Digital Support</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHY US -->
+
+<section class="why">
+
+<div class="container">
+
+<div class="title">
+
+<span style="color:#67e8f9;">WHY CHOOSE US</span>
+
+<h2>Why VIPIN CSC CENTER?</h2>
+
+<p>
+Professional digital assistance with customer-first service.
+</p>
+
+</div>
+
+
+<div class="why-grid">
+
+
+<div class="why-card">
+
+<div class="big-icon">⚡</div>
+
+<h3>Fast Service</h3>
+
+<p>
+Online kaam ko fast aur organized way mein complete karne ki koshish.
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="big-icon">🔐</div>
+
+<h3>Privacy Focus</h3>
+
+<p>
+Customer documents aur information ko carefully handle karna priority hai.
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="big-icon">🤝</div>
+
+<h3>Customer Support</h3>
+
+<p>
+Digital services ko samajhne aur use karne mein customer assistance.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ENQUIRY -->
+
+<section class="enquiry" id="enquiry">
+
+<div class="container">
+
+<div class="title">
+
+<span>ONLINE ENQUIRY</span>
+
+<h2>Service Ke Liye Enquiry Karein</h2>
+
+<p>
+Form fill karein. Submit karne par WhatsApp message open hoga.
+</p>
+
+</div>
+
+
+<div class="form-box">
+
+<form onsubmit="sendWhatsApp(event)">
+
+<div class="form-grid">
+
+
+<div class="input-group">
+
+<label>Your Name</label>
+
+<input
+type="text"
+id="name"
+placeholder="Apna naam likhein"
+required>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Mobile Number</label>
+
+<input
+type="tel"
+id="mobile"
+placeholder="Mobile number"
+required>
+
+</div>
+
+
+<div class="input-group full">
+
+<label>Select Service</label>
+
+<select id="service" required>
+
+<option value="">Select Service</option>
+<option>AEPS</option>
+<option>Aadhaar Pay</option>
+<option>Aadhaar Service</option>
+<option>PAN Card</option>
+<option>Online Form</option>
+<option>Bill Payment</option>
+<option>Print & Scan</option>
+<option>Ticket Booking</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+
+<div class="input-group full">
+
+<label>Message</label>
+
+<textarea
+id="message"
+placeholder="Aapko kis service ki zarurat hai?"></textarea>
+
+</div>
+
+
+</div>
+
+<button class="btn btn-primary" type="submit">
+Send Enquiry on WhatsApp →
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="container contact-grid">
+
+
+<div class="contact-card">
+
+<h2>
+Visit VIPIN CSC CENTER
+</h2>
+
+<p>
+Online forms, AEPS, Aadhaar Pay, PAN,
+printing aur digital services ke liye contact karein.
+</p>
+
+
+<div class="contact-details">
+
+<div class="contact-detail">
+📞 <strong>Mobile</strong>
+YOUR MOBILE NUMBER
+</div>
+
+
+<div class="contact-detail">
+📍 <strong>Address</strong>
+VIPIN CSC CENTER, YOUR CITY, INDIA
+</div>
+
+
+<div class="contact-detail">
+🕐 <strong>Opening Hours</strong>
+9:00 AM – 8:00 PM
+</div>
+
+</div>
+
+</div>
+
+
+<!-- GOOGLE MAP -->
+
+<iframe
+class="map"
+src="https://www.google.com/maps?q=Kushinagar,Uttar%20Pradesh&output=embed"
+loading="lazy">
+</iframe>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container footer-grid">
+
+
+<div>
+
+<h3>VIPIN CSC CENTER</h3>
+
+<p>
+Cyber Cafe & Digital Service Center.
+Aadhaar, AEPS, Aadhaar Pay, PAN Card,
+Online Forms, Bill Payment, Print & Scan.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Quick Links</h3>
+
+<ul>
+<li>Home</li>
+<li>Services</li>
+<li>AEPS</li>
+<li>Rates</li>
+<li>Contact</li>
+</ul>
+
+</div>
+
+
+<div>
+
+<h3>Services</h3>
+
+<ul>
+<li>AEPS</li>
+<li>Aadhaar Pay</li>
+<li>PAN Card</li>
+<li>Online Forms</li>
+<li>Print & Scan</li>
+</ul>
+
+</div>
+
+
+</div>
+
+
+<div class="container copyright">
+
+© 2026 VIPIN CSC CENTER • All Rights Reserved
+
+</div>
+
+</footer>
+
+
+<!-- WHATSAPP -->
+
+<a
+href="https://wa.me/YOURNUMBER"
+target="_blank"
+class="whatsapp"
+title="WhatsApp">
+
+💬
+
+</a>
+
+
+<script>
+
+/* DARK MODE */
+
+function darkMode(){
+
+    document.body.classList.toggle("dark");
+
+    const button = document.querySelector(".dark-btn");
+
+    if(document.body.classList.contains("dark")){
+        button.innerHTML="☀️";
+    }else{
+        button.innerHTML="🌙";
+    }
+
+}
+
+
+/* WHATSAPP ENQUIRY */
+
+function sendWhatsApp(event){
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("name").value;
+
+    const mobile =
+        document.getElementById("mobile").value;
+
+    const service =
+        document.getElementById("service").value;
+
+    const message =
+        document.getElementById("message").value;
+
+
+    const text =
+`Hello VIPIN CSC CENTER 👋
+
+Name: ${name}
+
+Mobile: ${mobile}
+
+Service: ${service}
+
+Message: ${message}`;
+
+
+    /*
+       YAHAN APNA WHATSAPP NUMBER DALO
+
+       Example:
+       const number = "919876543210";
+    */
+
+    const number = "YOURWHATSAPPNUMBER";
+
+
+    window.open(
+        "https://wa.me/" +
+        number +
+        "?text=" +
+        encodeURIComponent(text),
+        "_blank"
+    );
+
+}
+
+</script>
+
+</body>
+</html>
